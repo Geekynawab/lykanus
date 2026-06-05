@@ -293,3 +293,44 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .steps-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Who It's For ── */
+.who-its-for { background: var(--white); }
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.who-card {
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: box-shadow 0.2s;
+}
+.who-card:hover { box-shadow: var(--shadow); }
+.who-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--teal-dark);
+  background: #CCFBF1;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.who-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.6rem;
+}
+.who-card p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .who-grid { grid-template-columns: 1fr; }
+}
