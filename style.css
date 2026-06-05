@@ -334,3 +334,115 @@ ul { list-style: none; }
 @media (max-width: 640px) {
   .who-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Integrations ── */
+.integrations { background: var(--gray-50); }
+.integrations-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.integration-badge {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  transition: border-color 0.2s, color 0.2s;
+}
+.integration-badge:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: var(--charcoal);
+  padding: 5rem 0;
+}
+.cta-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-banner-text h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+}
+.cta-banner-text p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 460px;
+}
+.cta-banner-btn {
+  background: var(--teal);
+  color: var(--white);
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.cta-banner-btn:hover { background: var(--teal-dark); }
+
+@media (max-width: 640px) {
+  .cta-banner-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--charcoal-mid);
+  padding: 4rem 0 0;
+  color: rgba(255,255,255,0.5);
+}
+.footer-inner {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand { flex: 1; min-width: 200px; }
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  max-width: 240px;
+}
+.footer-links {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.footer-col h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col a {
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--teal-light); }
+.footer-bottom {
+  padding: 1.5rem 0;
+  font-size: 0.8rem;
+}
