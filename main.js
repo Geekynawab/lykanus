@@ -7,6 +7,15 @@ navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
+// Demo form submit
+const demoForm = document.getElementById('demoForm');
+demoForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.getElementById('formFields').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'flex';
+});
+
 // Scroll fade-in
 const fadeEls = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver((entries) => {
