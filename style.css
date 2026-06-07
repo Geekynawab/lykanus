@@ -36,7 +36,7 @@ ul { list-style: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 68px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +48,7 @@ ul { list-style: none; }
   letter-spacing: -0.5px;
 }
 .nav-logo-img {
-  height: 44px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -102,7 +102,7 @@ ul { list-style: none; }
   .nav-links {
     display: none;
     position: absolute;
-    top: 68px; left: 0; right: 0;
+    top: 76px; left: 0; right: 0;
     flex-direction: column;
     background: var(--white);
     padding: 1.5rem 2rem;
@@ -120,7 +120,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 68px;
+  padding-top: 76px;
 }
 .hero-bg-wolf {
   position: absolute;
