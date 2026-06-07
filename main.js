@@ -9,11 +9,33 @@ navToggle.addEventListener('click', () => {
 
 // Demo form submit
 const demoForm = document.getElementById('demoForm');
-demoForm.addEventListener('submit', (e) => {
+const submitBtn = demoForm.querySelector('.form-submit');
+
+demoForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  document.getElementById('formFields').style.display = 'none';
-  const success = document.getElementById('formSuccess');
-  success.style.display = 'flex';
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch('https://formspree.io/f/mpqeprrn', {
+      method: 'POST',
+      body: new FormData(demoForm),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.getElementById('formFields').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'flex';
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book a Demo';
+      alert('Something went wrong. Please try again.');
+    }
+  } catch {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Book a Demo';
+    alert('Something went wrong. Please check your connection and try again.');
+  }
 });
 
 // Scroll fade-in
