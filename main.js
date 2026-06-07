@@ -1,4 +1,4 @@
-// Lykanus — main.js
+// Lykan — main.js
 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
