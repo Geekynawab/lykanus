@@ -116,21 +116,35 @@ ul { list-style: none; }
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--charcoal);
+  background:
+    radial-gradient(ellipse at 72% 38%, rgba(192,57,43,0.22) 0%, transparent 52%),
+    radial-gradient(ellipse at 15% 82%, rgba(192,57,43,0.09) 0%, transparent 42%),
+    var(--charcoal);
   display: flex;
   align-items: center;
   overflow: hidden;
   padding-top: 76px;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.028) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
 .hero-bg-wolf {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(300px, 55vw, 700px);
-  opacity: 0.07;
+  right: 2%;
+  transform: translateY(-50%);
+  width: clamp(280px, 40vw, 560px);
+  opacity: 0.14;
+  filter: drop-shadow(0 0 70px rgba(192,57,43,0.45));
   user-select: none;
   pointer-events: none;
+  z-index: 0;
 }
 .hero-content {
   max-width: 1200px;
@@ -142,21 +156,40 @@ ul { list-style: none; }
 .hero-tags {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+.hero-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: var(--teal-light);
+  border: 1px solid rgba(212,79,58,0.45);
+  background: rgba(192,57,43,0.12);
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
 }
 .hero-headline {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  color: var(--white);
+  background: linear-gradient(135deg, #ffffff 55%, rgba(255,255,255,0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.1;
   letter-spacing: -1.5px;
   margin-bottom: 1.5rem;
   max-width: 700px;
+}
+@media (max-width: 768px) {
+  .hero-bg-wolf {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(240px, 75vw, 380px);
+    opacity: 0.06;
+    filter: none;
+  }
 }
 .hero-sub {
   font-size: 1.1rem;
